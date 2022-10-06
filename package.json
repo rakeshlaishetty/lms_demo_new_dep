@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "nodemon": "nodemon index.js",
-    "client":"cd client && npm i --legacy-peer-deps && npm run build",
-    "server":"node index.js",
-    "start": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\""
+    "start": "node index.js "
   },
   "author": "",
   "license": "ISC",
