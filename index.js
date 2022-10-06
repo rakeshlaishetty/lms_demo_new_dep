@@ -1401,8 +1401,6 @@ if (process.env.NODE_ENV !== "production") {
     res.sendFile(path.join(__dirname, "client/build/index.html"));
   });
 }
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
-app.listen(port, () => {
-  console.log("3008 server running");
-});
+app.listen(port);
