@@ -1402,6 +1402,6 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 const port = process.env.PORT || 3008;
-app.listen(port, () => {
+app.listen(3008, () => {
   console.log("3008 server running");
 });
