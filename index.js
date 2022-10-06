@@ -45,18 +45,14 @@ const fileExtLimiter = require("./middleware/fileExtLimiter");
 const fileSizeLimiter = require("./middleware/fileSizeLimiter");
 
 //********************************* CONTROLLERS ****************************************** */
-const attendance = require('./controllers/attendanceRoutes');
-const admin = require('./controllers/adminRoutes');
-const admission = require('./controllers/admissionRoutes');
-const classes = require('./controllers/classesRoutes');
-const staff = require('./controllers/staffRoutes');
-const fees = require('./controllers/feesRoutes');
-const timetable = require('./controllers/timetableRoutes');
-const assignments = require('./controllers/assignmentRoutes');
-
-
-
-
+const attendance = require("./controllers/attendanceRoutes");
+const admin = require("./controllers/adminRoutes");
+const admission = require("./controllers/admissionRoutes");
+const classes = require("./controllers/classesRoutes");
+const staff = require("./controllers/staffRoutes");
+const fees = require("./controllers/feesRoutes");
+const timetable = require("./controllers/timetableRoutes");
+const assignments = require("./controllers/assignmentRoutes");
 
 //********************************* CONFIGURATIONS ****************************************** */
 
@@ -74,16 +70,14 @@ app.use(
   })
 );
 
-app.use('/attendance', attendance);
-app.use('/admin', admin);
-app.use('/admission', admission);
-app.use('/classes', classes);
-app.use('/staff', staff);
-app.use('/fees', fees);
-app.use('/timetable', timetable);
-app.use('/assignments/', assignments);
-
-
+app.use("/attendance", attendance);
+app.use("/admin", admin);
+app.use("/admission", admission);
+app.use("/classes", classes);
+app.use("/staff", staff);
+app.use("/fees", fees);
+app.use("/timetable", timetable);
+app.use("/assignments/", assignments);
 
 //********************************* SCHEMAS ****************************************** */
 
@@ -123,10 +117,10 @@ app.get("/home", (req, res) => {
   res.json({ status: "workking fine" });
 });
 
-app.get('/getSchool', async (req, res) => {
-  let school = await School.findOne({_id: req.query.id});
+app.get("/getSchool", async (req, res) => {
+  let school = await School.findOne({ _id: req.query.id });
   res.status(200).send(school);
-})
+});
 
 app.get("/session", (req, res) => {
   res.json({ status: "workking fine" });
@@ -137,31 +131,34 @@ app.get("/getAdminDetails", async (req, res) => {
   res.status(200).send(admin);
 });
 
-
-
-app.get('/getTeacherDashboardDetails', async (req, res) => {
-  let data = {}
-
+app.get("/getTeacherDashboardDetails", async (req, res) => {
+  let data = {};
 
   //Fetching today's schedule
   let date = new Date();
-  let day = date.getDay()-1;
+  let day = date.getDay() - 1;
 
   let schedule = [];
-  let periods = await TimeTable.find({schoolId: req.query.schoolId, day: day}).sort({timeSlot: 1}).populate(['classId', 'subjectId']);
+  let periods = await TimeTable.find({ schoolId: req.query.schoolId, day: day })
+    .sort({ timeSlot: 1 })
+    .populate(["classId", "subjectId"]);
 
-  for(let period of periods){
-    for(let item of period.classId.subjects){
-      if(item.faculty && item.subjectId.equals(period.subjectId._id) &&  item.faculty.equals(req.query.facultyId)){
+  for (let period of periods) {
+    for (let item of period.classId.subjects) {
+      if (
+        item.faculty &&
+        item.subjectId.equals(period.subjectId._id) &&
+        item.faculty.equals(req.query.facultyId)
+      ) {
         schedule.push(period);
       }
     }
   }
-    
-  data['schedule'] = schedule;
+
+  data["schedule"] = schedule;
 
   //Fetch Annouoncements
-  const { facultyId, schoolId} = req.query;
+  const { facultyId, schoolId } = req.query;
   const announcements = await TeacherAnnouncement.find(
     {
       teachers: {
@@ -182,11 +179,10 @@ app.get('/getTeacherDashboardDetails', async (req, res) => {
       },
     }
   );
-  data['announcements'] = announcements;
+  data["announcements"] = announcements;
 
   res.status(200).send(data);
-
-})
+});
 
 app.get("/allStudents", (req, res) => {
   let { schoolId } = req.query;
@@ -296,11 +292,10 @@ app.post("/findStudent", async (req, res) => {
   res.status(200).send(students);
 });
 
-app.get('/getClassCount', async (req, res) => {
-  let count = await Classes.countDocuments({school: req.query.schoolId});
+app.get("/getClassCount", async (req, res) => {
+  let count = await Classes.countDocuments({ school: req.query.schoolId });
   res.status(200).send(count.toString());
-})
-
+});
 
 app.get("/getAdmissionPDF", async (req, res) => {
   var myDoc = new PDFDocument({ bufferPages: true });
@@ -333,7 +328,6 @@ app.post("/deleteStudent", async (req, res) => {
 });
 
 app.post("/addTeacher", (req, res) => {
-
   const nTeacher = {
     name: req.body.name,
     gender: req.body.gender,
@@ -348,7 +342,7 @@ app.post("/addTeacher", (req, res) => {
     bank_acc_no: req.body.bank_acc_no,
     aadhar: req.body.aadhar,
     pan: req.body.pan,
-    salary:{
+    salary: {
       base: req.body.salary.base,
       hra: req.body.salary.hra,
       da: req.body.salary.da,
@@ -357,7 +351,7 @@ app.post("/addTeacher", (req, res) => {
       tds: req.body.salary.tds,
       other: req.body.salary.other,
     },
-    schoolId: req.body.schoolId
+    schoolId: req.body.schoolId,
   };
   const teacher = new Teacher(nTeacher);
 
@@ -420,7 +414,7 @@ app.get("/getClasse/name/section", async (req, res) => {
 app.get("/getStudentsList", async (req, res) => {
   let students = await Student.find({
     class: req.query.classId,
-  }).sort({name: 1});
+  }).sort({ name: 1 });
   // let students = await Student.find({});
   res.status(200).send(students);
 });
@@ -634,8 +628,6 @@ app.get("/getStudents", async (req, res) => {
   res.status(200).send(students);
 });
 
-
-
 app.post("/getStudent", (req, res) => {
   // res.send("done");
   Student.findOne({ _id: req.body.id })
@@ -662,12 +654,12 @@ app.get("/getSubjects", async (req, res) => {
 
 app.get("/getClassSubjects", async (req, res) => {
   let foundClass = await Classes.findOne({
-    _id: req.query.classId
+    _id: req.query.classId,
   });
   let subjects = [];
   for (let item of foundClass.subjects) {
     let subject = await Subject.findOne({ _id: item.subjectId });
-    let faculty = await Teacher.findOne({ _id: item.faculty }, {name: 1});
+    let faculty = await Teacher.findOne({ _id: item.faculty }, { name: 1 });
     subjects.push({ subject, faculty });
   }
   res.status(200).send(subjects);
@@ -745,10 +737,12 @@ app.get("/getRecentAdmissions", async (req, res) => {
   res.status(200).send(data);
 });
 
-app.get('/getRecentFeePayments', async (req, res) => {
-  let data = await FeeTransactions.find({ $orderby: { $natural: -1 } }).limit(3);
+app.get("/getRecentFeePayments", async (req, res) => {
+  let data = await FeeTransactions.find({ $orderby: { $natural: -1 } }).limit(
+    3
+  );
   res.status(200).send(data);
-})
+});
 
 app.post("/addAssignmentQuestion", async (req, res) => {
   Assignment.updateOne(
@@ -1020,7 +1014,7 @@ app.get("/getAssignedClassToTeachersClass", async (req, res) => {
   let { TeacherId, schoolId } = req.query;
   let resp = await Classes.find(
     {
-      'subjects.faculty': mongoose.Types.ObjectId(TeacherId),
+      "subjects.faculty": mongoose.Types.ObjectId(TeacherId),
       schoolId: mongoose.Types.ObjectId(schoolId),
     },
     { name: 1, class: 1, division: 1, _id: 1 }
@@ -1157,7 +1151,7 @@ app.post("/teachers/Announcement", (req, res) => {
 });
 app.post("/document/shareWith", (req, res) => {
   let { shareWith } = req.body;
-  console.log(req.body)
+  console.log(req.body);
   if (shareWith == "students") {
     let { selectedClassId, shareDocumentId } = req.body;
     console.log(selectedClassId, shareDocumentId);
@@ -1170,7 +1164,7 @@ app.post("/document/shareWith", (req, res) => {
         // $push: {
         //   shareWithClass: mongoose.Types.ObjectId(selectedClassId),
         // },
-        $set:{shareWithClass: selectedClassId}
+        $set: { shareWithClass: selectedClassId },
       }
     ).then((re) => {
       console.log(re);
@@ -1191,7 +1185,7 @@ app.post("/document/shareWith", (req, res) => {
         // $push: {
         //   sharedWithTeachers: { $each: teachers },
         // },
-        $set:{sharedWithTeachers: teachers}
+        $set: { sharedWithTeachers: teachers },
       }
     ).then((re) => {
       console.log(re);
@@ -1251,9 +1245,9 @@ app.get("/getTeacherAnnouncement", async (req, res) => {
   res.status(200).send(r);
 });
 
-app.get('/getStudentAnnouncement', async (req, res) => {
+app.get("/getStudentAnnouncement", async (req, res) => {
   console.log(req.query);
-  const {studentId, schoolId, seen} = req.query;
+  const { studentId, schoolId, seen } = req.query;
   const r = await StudentAnnouncement.find(
     {
       students: {
@@ -1276,7 +1270,7 @@ app.get('/getStudentAnnouncement', async (req, res) => {
   );
   console.log(r);
   res.status(200).send(r);
-})
+});
 
 app.post("/updateTeacherAnnouncement/status", async (req, res) => {
   const { TeacherId, schoolId, seen } = req.body;
@@ -1343,7 +1337,7 @@ app.post(
 app.post("/deleteLibraryDocument", async (req, res) => {
   // await DocumentSharing.deleteMany({})
   // res.send('oj')
-  console.log(req.body)
+  console.log(req.body);
   try {
     await DocumentSharing.deleteOne({ _id: req.body.params._id });
     res.send("Document Got Deleted");
@@ -1367,10 +1361,13 @@ app.get("/LibraryData", async (req, res) => {
   }
 });
 
-app.get('/getStudentDocuments', async (req, res) => {
-  let documents = await DocumentSharing.find({schoolId: req.query.schoolId, shareWithClass: { $in: [req.query.classId] }});
+app.get("/getStudentDocuments", async (req, res) => {
+  let documents = await DocumentSharing.find({
+    schoolId: req.query.schoolId,
+    shareWithClass: { $in: [req.query.classId] },
+  });
   res.status(200).send(documents);
-})
+});
 
 app.post("/sendEmail", async (req, res) => {
   const transporter = nodemailer.createTransport({
@@ -1396,7 +1393,7 @@ app.post("/sendEmail", async (req, res) => {
     }
   });
 });
-
-app.listen(3008, () => {
+let port = process.env.PORT || 3008;
+app.listen(port, () => {
   console.log("3008 server running");
 });
