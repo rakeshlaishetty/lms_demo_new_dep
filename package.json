@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blob-stream": "latest",
+    "body-parser": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "express-fileupload": "latest",
+    "express-session": "latest",
+    "gridfs-stream": "latest",
+    "jsonwebtoken": "latest",
+    "localStorage": "latest",
+    "mongoose": "latest",
+    "multer": "latest",
+    "multer-gridfs-storage": "latest",
+    "nodemailer": "latest",
+    "nodemon": "latest",
+    "pdfkit": "latest",
+    "sessionstorage": "latest"
+  }
+}

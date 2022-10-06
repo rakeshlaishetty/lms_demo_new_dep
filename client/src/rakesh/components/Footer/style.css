@@ -1,0 +1,51 @@
+.Footer-Header {
+  height: 150px;
+}
+.Footer-wrappers {
+  width: 100vw;
+  background: url("../../images/first-screen-bg.jpg");
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center bottom;
+  object-position: center bottom;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.Footer-custombtn {
+  border: 1px solid #fff;
+  align-self: center;
+  width: 150px;
+  color: #fff;
+  padding: 5px;
+  background-color: transparent;
+  outline-color: whitesmoke;
+  margin: 5px;
+  padding: 10px;
+  transition: all 0.5s;
+}
+
+.Footer-custombtn:hover {
+  border: 1px solid #233441;
+  align-self: center;
+  color: #fff;
+  background-color: #233441;
+  outline-color: whitesmoke;
+}
+.Footer-text-links {
+  height: 60vh;
+  width: 100vw;
+}
+@media (max-width: 998px) {
+  .Footer-wrappers {
+    height: auto;
+  }
+  .Footer-Header {
+    height: 150px;
+  }
+  .Footer-text-links {
+    width: 100vw;
+    height: auto;
+    background-color: #d52839;
+  }
+}

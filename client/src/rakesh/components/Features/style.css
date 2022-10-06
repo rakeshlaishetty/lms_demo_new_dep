@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+.Feature__container__Card {
+  width: 80vw;
+  height: 400px;
+  min-height: 400px;
+  max-height: 450px;
+  max-width: 80vw;
+  margin: 50px auto;
+  padding: 10px;
+  border-radius: 10px;
+  background: url("./images/bg.svg");
+  position: relative;
+}
+.Feature__container__Card__bg {
+  color: #fff;
+  padding: 10px;
+  margin: auto;
+}
+.Feature__container__Card__Button {
+  background-color: #1da1f2;
+  color: whitesmoke;
+  border-radius: 20px;
+  border: none;
+  width: 210px;
+  height: 60px;
+  margin: auto;
+  font-size: large;
+  text-align: center;
+}
+.Feature__container__Card__child {
+  margin: auto;
+  position: absolute;
+  bottom: 50px;
+}
