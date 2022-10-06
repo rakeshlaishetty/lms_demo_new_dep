@@ -17,7 +17,7 @@
     "@react-pdf/renderer": "latest",
     "apexcharts": "latest",
     "axios": "latest",
-    "bootstrap": "^latest",
+    "bootstrap": "latest",
     "chart.js": "latest",
     "classnames": "latest",
     "donut-chart-js": "latest",
