@@ -3,7 +3,7 @@
 #give permission for everything in the express-app directory
 sudo chmod -R 777 /home/ec2-user/express-app
 
-sudo chmod -R 777 /home/ec2-user tmp
+sudo chown -R $(id -u):$(id -g) ~/.npm
 #navigate into our working directory where we have all our github files
 cd /home/ec2-user/express-app
 
