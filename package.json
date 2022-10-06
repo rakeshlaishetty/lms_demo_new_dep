@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "preinstall": "cd client && npm install && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "nodemon": "nodemon index.js",
-    "start": "cd client &&  npm install && node index.js "
+    "start": "node index.js "
   },
   "author": "",
   "license": "ISC",
