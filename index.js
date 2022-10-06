@@ -1393,7 +1393,10 @@ app.post("/sendEmail", async (req, res) => {
     }
   });
 });
-let port = process.env.PORT || 3008;
+
+app.configure(function () {
+  app.set("port", process.env.PORT || 3000);
+});
 app.listen(port, () => {
   console.log("3008 server running");
 });
