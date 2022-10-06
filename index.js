@@ -1394,7 +1394,6 @@ app.post("/sendEmail", async (req, res) => {
   });
 });
 
-const port = process.env.PORT || 3008;
-app.listen(port, () => {
-  console.log(`${port} server running`);
+app.listen(3008, () => {
+  console.log("3008 server running");
 });

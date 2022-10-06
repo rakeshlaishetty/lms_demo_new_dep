@@ -4,11 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm start",
-    "react-dev": "cd client && npm start",
-    "preinstall": "npm install",
-    "install": "cd client && npm install",
-    "build": "cd client && npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon index.js",
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
