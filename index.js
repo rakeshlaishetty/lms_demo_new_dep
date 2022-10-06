@@ -1394,9 +1394,7 @@ app.post("/sendEmail", async (req, res) => {
   });
 });
 
-app.configure(function () {
-  app.set("port", process.env.PORT || 3000);
-});
+const port = process.env.PORT || 3008;
 app.listen(port, () => {
-  console.log("3008 server running");
+  console.log(`${port} server running`);
 });
