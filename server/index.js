@@ -1402,6 +1402,9 @@ if (process.env.NODE_ENV !== "production") {
     res.sendFile(path.join(__dirname, "../client/build/index.html"));
   });
 }
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
 const port = 8081;
 app.listen(port, () => {
   console.log("3008 server running");
