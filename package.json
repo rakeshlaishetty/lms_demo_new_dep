@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "cd client && npm --legacy-peer-deps i ",
     "clientbuild": "cd client && npm run build ",
-    "start": "npm run client && npm run client && cd server && npm i && node index.js",
+    "start": "cd server && npm i && node index.js",
     "eb:prod": "npm run start:prod"
   },
   "author": "",
