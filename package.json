@@ -4,10 +4,8 @@
   "description": "Learning Management System",
   "main": "index.js",
   "scripts": {
-    "preinstall": "cd server && npm install -g npm --silent",
-    "install": "cd server && npm install --silent",
     "build": "cd client && npm run build",
-    "start": "cd server && npm install --silent && npm start"
+    "start": "cd server &&  npm start"
   },
   "repository": {
     "type": "git",
