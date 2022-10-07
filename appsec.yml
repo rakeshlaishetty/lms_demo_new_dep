@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/nodedemolmspractical
+    destination: /home/ec2-user/nodejsnewdemo
 hooks:
   ApplicationStop:
     - location: scripts/application_stop.sh
