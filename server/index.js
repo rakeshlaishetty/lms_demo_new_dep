@@ -1266,7 +1266,7 @@ app.post("/sendEmail", async (req, res) => {
   });
 });
 
-let reqPath = path.join(__dirname, "../");
+let reqPath = path.join(__dirname);
 
 if (process.env.NODE_ENV !== "production") {
   app.use(express.static(`${reqPath}/client/build`));
