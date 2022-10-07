@@ -119,5 +119,5 @@
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.1"
   },
-  "proxy": "http://localhost:3008"
+  "proxy": "http://localhost:8081"
 }
