@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install": "cd server && npm install",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "react-scripts build",
-    "start": "cd server && npm install && npm run start",
+    "start": "cd server && npm run start",
     "eb:prod": "npm run start:prod"
   }
 }
