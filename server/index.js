@@ -1266,11 +1266,12 @@ app.post("/sendEmail", async (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
-  console.log(path.resolve());
-  console.log(path.join(__dirname));
-  res.send(`hello World ${path.join(__dirname)} And  ${path.resolve()}`);
-});
+app.use(express.static(path.resolve(__dirname, "..client/build")));
+if (process.env.NODE_ENV !== "production") {
+  app.get("*", (req, res) => {
+    res.send("Hello World");
+  });
+}
 
 const port = 8081;
 app.listen(port, () => {
