@@ -27,6 +27,7 @@
     "nodemailer": "latest",
     "nodemon": "latest",
     "pdfkit": "latest",
-    "sessionstorage": "latest"
+    "sessionstorage": "latest",
+    "webpack": "4.29.6"
   }
 }
