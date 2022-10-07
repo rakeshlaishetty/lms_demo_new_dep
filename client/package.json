@@ -45,7 +45,8 @@
     "react-toastify": "latest",
     "recharts": "latest",
     "sweetalert": "latest",
-    "tinycolor2": "latest"
+    "tinycolor2": "latest",
+    "webpack": "4.29.6"
   },
   "scripts": {
     "start": "react-scripts start",
