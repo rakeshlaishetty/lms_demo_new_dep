@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap");
+body {
+  font-family: "sans";
+}
+/* .NavPage__Container__fullPage {
+  background-image: linear-gradient(
+    to right top,
+    #c9002e,
+    #d7173d,
+    #e5274c,
+    #f2345c,
+    #ff416c
+  ) !important;
+} */
+.NavPage-hero-section {
+  height: 75px;
+  width: 100%;
+  font-family: "sans";
+  object-fit: cover;
+  width: 100vw;
+  /* background: url("../images//first-screen-bg.jpg"); */
+  /* background-color: inherit; */
+  /* background-image: linear-gradient(
+    to right top,
+    #c9002e,
+    #d7173d,
+    #e5274c,
+    #f2345c,
+    #ff416c
+  ) !important; */
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.NavPage__Navpage__row {
+  border: none;
+}
+.NavPage-container {
+  /* background-color: #060b26; */
+  /* background: url("../images//first-screen-bg.jpg"); */
+  /* background-image: linear-gradient(
+    to right top,
+    #c9002e,
+    #d7173d,
+    #e5274c,
+    #f2345c,
+    #ff416c
+  ) !important; */
+  /* margin-top: 10px; */
+  object-fit: cover;
+  /* height: 100vh; */
+  width: 100vw;
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-self: center;
+  font-family: "sans";
+  border: none;
+}
+.book-demo {
+  display: none;
+}
+.NavPage-Carousels {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  justify-content: center;
+  padding: 5px;
+  height: 150px;
+  /* margin: 80px; */
+  padding: 10px;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+}
+.NavPage-Carousel {
+  width: 80%;
+  flex: 4;
+  display: flex;
+  padding: 10px;
+  font-family: "sans";
+}
+.NavPage-text-elements {
+  /* display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  float: left;
+  height: 50%;
+  width: 250px;
+  font-size: 16px;
+  */
+  /* margin-top: 105px; */
+
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  /* float: right; */
+
+  width: 400px;
+  font-size: 16px;
+
+  font-family: "sans";
+}
+.NavPage-text {
+  margin-top: 50px;
+  font-family: "sans";
+  font-style: normal;
+}
+.NavPage-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* justify-content: center; */
+  grid-gap: 15px;
+  gap: 15px;
+  margin-top: auto;
+  /* bottom: 20px; */
+  font-family: "sans";
+  margin-bottom: 90px;
+}
+#btn-demo {
+  background-color: #ffffff;
+  color: #cf2e2e;
+  border: 1px solid #ffffff;
+  min-width: 130px;
+  height: 45px;
+  padding: 10px 20px;
+  font-family: "sans";
+}
+
+#btn-demo:hover {
+  background-color: #212121;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+#btn-whtsnext {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  transition: all 0.3s;
+  min-width: 150px;
+  height: 45px;
+  padding: 10px 20px;
+  font-family: "sans";
+}
+#btn-whtsnext:hover {
+  background-color: #212121;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+.NavPage-cards {
+  display: flex;
+  flex-direction: row;
+  margin-top: 50px;
+  margin-right: 50px;
+  gap: 10px;
+  height: 70%;
+  width: 100%;
+}
+.card {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  flex: 1;
+  position: relative;
+  margin: 0.1rem;
+  cursor: pointer;
+  transition: flex 0.3s;
+  font-family: "sans";
+}
+.card h2 {
+  color: black;
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  opacity: 0;
+  transition: opacity 0;
+}
+.card.active {
+  flex: 5;
+}
+.card.active h2 {
+  opacity: 1;
+}
+
+@media (max-width: 998px) {
+  .NavPage-hero-section {
+    height: auto;
+  }
+  .book-demo {
+    display: flex;
+  }
+  .navigationlist {
+    display: none;
+  }
+  .Bookdemo {
+    display: none;
+  }
+  .NavPage-container {
+    height: auto;
+  }
+  .NavPage-Carousels {
+    display: flex;
+    justify-content: center;
+    width: 80vw;
+    height: auto;
+    flex-direction: column-reverse;
+  }
+  .NavPage-Carousel {
+    width: 100%;
+    display: flex;
+    height: 250px;
+    align-items: center;
+    justify-content: center;
+  }
+  .NavPage-cards {
+    display: flex;
+    flex-direction: row;
+    height: 50vh;
+    margin: 10px;
+  }
+  .NavPage-Cards-text {
+    height: 50vh;
+  }
+  .NavPage-text {
+    margin: 0;
+  }
+  .NavPage-text-elements {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+    color: #ffffff;
+    margin: auto;
+    height: 40vh;
+    width: 100vw;
+    font-size: 16px;
+  }
+  .NavPage-buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    gap: 15px;
+  }
+  #btn-demo {
+    background-color: #ffffff;
+    color: #cf2e2e;
+    border: 1px solid #ffffff;
+  }
+  .NavPage-text-elements,
+  p,
+  h1 {
+    text-align: center;
+  }
+  .navbar {
+    background-color: #060b26;
+    height: 80px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  .menu-bars {
+    margin-left: 2rem;
+    font-size: 2rem;
+    background: none;
+  }
+
+  .nav-menu {
+    background-color: #ffffff;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: 850ms;
+  }
+
+  .nav-menu.active {
+    left: 0;
+    transition: 350ms;
+  }
+
+  .nav-text {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 8px 0px 8px 16px;
+    list-style: none;
+    height: 60px;
+  }
+
+  .nav-text a {
+    text-decoration: none;
+    color: #f5f5f5;
+    font-size: 18px;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-radius: 4px;
+  }
+
+  .nav-text a:hover {
+    background-color: #1a83ff;
+  }
+
+  .nav-menu-items {
+    width: 100vw;
+  }
+
+  .navbar-toggle {
+    background-color: #ffffff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+  }
+
+  span {
+    margin-left: 16px;
+  }
+}

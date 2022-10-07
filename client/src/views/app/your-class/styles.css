@@ -1,0 +1,17 @@
+.subject-name {
+    font-weight: bold;
+    color: #eeb316;
+}
+
+.cell-border {
+    border-left: 3.5px solid #eeb316 !important;
+}
+
+.schedule-cell {
+    padding-left: 2%;
+    padding-top: 2%;
+    border-left: 3.5px solid #eeb316 !important;
+    border-right: 2px solid #eee;
+    color: #eeb316;
+    font-weight: bold;
+}

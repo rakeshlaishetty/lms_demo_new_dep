@@ -1,0 +1,79 @@
+.timeline ul, li {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .timeline .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1rem;
+    padding: 3rem 0;
+  }
+  
+  .timeline h1 {
+    font-size: 1.1rem;
+  }
+  
+  .timeline .sessions {
+    margin-top: 2rem;
+    border-radius: 12px;
+    position: relative;
+  }
+  
+  .timeline li {
+    padding-bottom: 1.5rem;
+    border-left: 2px solid #eee;
+    position: relative;
+    padding-left: 20px;
+    margin-left: 10px;
+  }
+  .timeline li:last-child {
+    border: 0px;
+    padding-bottom: 0;
+  }
+  .timeline li:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 1.5px solid #eeb316;
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    top: 0px;
+  }
+  
+  .timeline .time {
+    color: #eeb316;
+    font-weight: 500;
+  }
+
+  .greeting-img{
+    position: relative;
+    width: auto;
+    top: -184px;
+    left: 60%;
+    right: 0;
+  }
+
+  .dashboard-greeting-student{
+    background-image: url('../../../assets/img/students.png');
+    background-repeat: no-repeat;
+    background-size: 360px;
+    background-position: 90% 5%;
+  }
+
+  .dashboard-greeting-teacher{
+    background-image: url('../../../assets/img/teacher.png');
+    background-repeat: no-repeat;
+    background-size: 330px;
+    background-position: 90% 5%;
+  }
+
+  .dashboard-greeting-admin{
+    background-image: url('../../../assets/img/admin.png');
+    background-repeat: no-repeat;
+    background-size: 330px;
+    background-position: 90% 5%;
+  }
