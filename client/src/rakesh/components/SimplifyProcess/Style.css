@@ -1,0 +1,112 @@
+.SimplifyProcess__parent__sticky__header {
+  display: flex;
+  text-align: left;
+  flex-wrap: wrap;
+  color: #000;
+  padding: 1em;
+  font: 1.5rem;
+  text-align: left;
+}
+.SimplifyProcess__parent__sticky__header h1 {
+  color: #000;
+  font-weight: bold;
+}
+
+@supports (position: sticky) {
+  .SimplifyProcess__parent__is-sticky {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+  }
+}
+
+/* Slideshow */
+
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+}
+
+.slide {
+  display: inline-block;
+
+  height: 400px;
+  width: 100%;
+  border-radius: 40px;
+}
+
+/* Buttons */
+
+.slideshowDots {
+  text-align: center;
+}
+
+.slideshowDot {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+
+  cursor: pointer;
+  margin: 15px 7px 0px;
+
+  background-color: #c4c4c4;
+}
+
+.slideshowDot.active {
+  background-color: #6a0dad;
+}
+
+.SimplifyCard__Head {
+  font-weight: 100;
+}
+
+.SimplifyCard__Head__active {
+  font-weight: bold;
+}
+.SimplifyCard__para__active {
+  display: block;
+}
+
+.SimplifyCard__para__ {
+  display: none;
+}
+
+.SimplifyCard__HeadText {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.SimplifyCard__text__div__inside {
+  /* height: calc(100% - 103px); */
+
+  height: 350px;
+  margin-bottom: 10px;
+}
+.SimplifyCard__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+}
+.SimplifyCard__row__wrap {
+  flex-direction: row-reverse;
+}
+.SimplifyCard__LearMore__btn {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  align-items: flex-end;
+  justify-content: center;
+  margin: auto;
+}
+
+.SimplifyCard__row {
+  margin-bottom: 10px;
+}

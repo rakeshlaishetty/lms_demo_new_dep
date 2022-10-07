@@ -1,0 +1,17 @@
+.CardText-Heading {
+  font-size: 24px;
+  font-weight: 900;
+}
+.CardText-Padding {
+  padding: 100px;
+}
+.CardText-Span-1 {
+  font-size: 40px;
+  color: black;
+  font-weight: 900;
+}
+.CardText-Span-2 {
+  font-size: 35px;
+  color: #56ccdf;
+  font-weight: 900;
+}
