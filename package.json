@@ -5,28 +5,29 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client": "cd client && npm install --legacy-peer-deps",
-    "build": "cd client && npm run build",
-    "start": "cd server &&  npm start"
+    "build": "react-scripts build",
+    "start": "node index.js",
+    "eb:prod": "npm run start:prod"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "blob-stream": "latest",
-    "body-parser": "latest",
-    "cors": "latest",
-    "express": "latest",
-    "express-fileupload": "latest",
-    "express-session": "latest",
-    "gridfs-stream": "latest",
-    "jsonwebtoken": "latest",
-    "localStorage": "latest",
-    "mongoose": "latest",
-    "multer": "latest",
-    "multer-gridfs-storage": "latest",
-    "nodemailer": "latest",
-    "nodemon": "latest",
-    "pdfkit": "latest",
-    "sessionstorage": "latest"
+    "blob-stream": "^0.1.3",
+        "body-parser": "latest",
+        "cors": "latest",
+        "express": "latest",
+        "express-fileupload": "latest",
+        "express-session": "latest",
+        "gridfs-stream": "latest",
+        "jsonwebtoken": "latest",
+        "localStorage": "latest",
+        "mongoose": "latest",
+        "multer": "latest",
+        "multer-gridfs-storage": "latest",
+        "nodemailer": "latest",
+        "nodemon": "latest",
+        "path": "latest",
+        "pdfkit": "latest",
+        "sessionstorage": "latest"
   }
 }
