@@ -4,6 +4,8 @@
   "description": "Learning Management System",
   "main": "index.js",
   "scripts": {
+    "preinstall": "cd server && npm install -g && npm --legacy-peer-deps",
+    "install": "cd client && npm install --legacy-peer-deps",
     "build": "cd client && npm run build",
     "start": "cd server &&  npm start"
   },
