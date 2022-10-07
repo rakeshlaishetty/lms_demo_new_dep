@@ -1,18 +1,33 @@
 {
-  "name": "lms",
+  "name": "server",
   "version": "1.0.0",
-  "description": "Learning Management System",
+  "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "cd server && npm install -g && npm --legacy-peer-deps",
-    "install": "cd client && npm install --legacy-peer-deps",
+    "client": "cd client && npm install --legacy-peer-deps",
     "build": "cd client && npm run build",
     "start": "cd server &&  npm start"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/QwEdu/LXP/tree/lms-new.git"
-  },
-  "author": "Qwings India",
-  "license": "ISC"
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "blob-stream": "latest",
+    "body-parser": "latest",
+    "cors": "latest",
+    "express": "latest",
+    "express-fileupload": "latest",
+    "express-session": "latest",
+    "gridfs-stream": "latest",
+    "jsonwebtoken": "latest",
+    "localStorage": "latest",
+    "mongoose": "latest",
+    "multer": "latest",
+    "multer-gridfs-storage": "latest",
+    "nodemailer": "latest",
+    "nodemon": "latest",
+    "pdfkit": "latest",
+    "sessionstorage": "latest"
+  }
 }
