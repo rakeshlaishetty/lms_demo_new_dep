@@ -5,6 +5,8 @@ sudo chmod -R 777 /home/ec2-user/testdempdeploy
 
 sudo chmod -R 777 /home
 
+sudo chown -R 900:900 "/home/webapp/.npm"
+
 sudo chown -R $(id -u):$(id -g) ~/.npm
 
 sudo chmod +x /home/
