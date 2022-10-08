@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "install": "cd client && npm --legacy-peer-deps i && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "react-scripts build",
-    "client": "cd client && npm --legacy-peer-deps i && npm run build",
     "start": "npm run client && node index.js",
     "eb:prod": "npm run start:prod"
   },
