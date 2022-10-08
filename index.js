@@ -1266,12 +1266,10 @@ app.post("/sendEmail", async (req, res) => {
   });
 });
 
-let reqPath = path.join(__dirname);
-
 if (process.env.NODE_ENV !== "production") {
-  app.use(express.static(`${reqPath}/client/build`));
+  app.use(express.static(path.join(__dirname, "client/build")));
   app.get("*", (req, res) => {
-    res.sendFile(path.join(`${reqPath}/client/build/index.html`));
+    res.sendFile(path.join(__dirname, "client/build/index.html"));
   });
 }
 
